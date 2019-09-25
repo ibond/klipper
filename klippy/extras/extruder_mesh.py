@@ -77,10 +77,10 @@ class ExtruderMesh:
         #x1y1 = self.points[iy1 * self.points_x + ix1]
         
         # test points are transposed
-        x0y0 = self.points[iy0 * self.points_x + ix0]
-        x1y0 = self.points[iy1 * self.points_x + ix0]
-        x0y1 = self.points[iy0 * self.points_x + ix1]
-        x1y1 = self.points[iy1 * self.points_x + ix1]
+        x0y0 = self.points[ix0 * self.points_x + iy0]
+        x0y1 = self.points[ix1 * self.points_x + iy0]
+        x1y0 = self.points[ix0 * self.points_x + iy1]
+        x1y1 = self.points[ix1 * self.points_x + iy1]
 
         px = math.modf(lookup_x)[0]
         py = math.modf(lookup_y)[0]
@@ -90,10 +90,10 @@ class ExtruderMesh:
 
         result = ((1-py) * xa) + (py * xb)
 
-        #logging.debug("extruder_mesh: (%.2f,%.2f) -> %f" % (x, y, result))
-        #logging.debug("extruder_mesh: (%.2f,%.2f)" % (lookup_x, lookup_y))
-        #logging.debug("extruder_mesh: (%d,%d,%d,%d)" % (ix0, ix1, iy0, iy1))
-        #logging.debug("extruder_mesh: (%.3f,%.3f,%.3f,%.3f)" % (x0y0, x1y0, x0y1, x1y1))
+        logging.debug("extruder_mesh: (%.2f,%.2f,%.4f) -> %f" % (x, y, e, result))
+        logging.debug("extruder_mesh: (%.2f,%.2f)" % (lookup_x, lookup_y))
+        logging.debug("extruder_mesh: (%d,%d,%d,%d)" % (ix0, ix1, iy0, iy1))
+        logging.debug("extruder_mesh: (%.3f,%.3f,%.3f,%.3f)" % (x0y0, x1y0, x0y1, x1y1))
 
         return result
 
