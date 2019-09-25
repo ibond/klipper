@@ -90,10 +90,10 @@ class ExtruderMesh:
 
         result = ((1-py) * xa) + (py * xb)
 
-        logging.debug("extruder_mesh: (%.2f,%.2f,%.4f) -> %f" % (x, y, e, result))
-        logging.debug("extruder_mesh: (%.2f,%.2f)" % (lookup_x, lookup_y))
-        logging.debug("extruder_mesh: (%d,%d,%d,%d)" % (ix0, ix1, iy0, iy1))
-        logging.debug("extruder_mesh: (%.3f,%.3f,%.3f,%.3f)" % (x0y0, x1y0, x0y1, x1y1))
+        logging.info("extruder_mesh: (%.2f,%.2f,%.4f) -> %f" % (x, y, e, result))
+        logging.info("extruder_mesh: (%.2f,%.2f)" % (lookup_x, lookup_y))
+        logging.info("extruder_mesh: (%d,%d,%d,%d)" % (ix0, ix1, iy0, iy1))
+        logging.info("extruder_mesh: (%.3f,%.3f,%.3f,%.3f)" % (x0y0, x1y0, x0y1, x1y1))
 
         return result
 
