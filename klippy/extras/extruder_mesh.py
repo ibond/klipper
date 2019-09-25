@@ -62,9 +62,9 @@ class ExtruderMesh:
         y = max(self.min_y, min(self.max_y, y))
 
         lookup_x = ((x - self.min_x) /
-                    float(self.max_x - self.min_x)) * self.points_x
+                    float(self.max_x - self.min_x)) * (self.points_x - 1)
         lookup_y = ((y - self.min_y) /
-                    float(self.max_y - self.min_y)) * self.points_y
+                    float(self.max_y - self.min_y)) * (self.points_y - 1)
 
         ix0 = int(math.floor(lookup_x))
         ix1 = int(math.ceil(lookup_x))
