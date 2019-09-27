@@ -67,9 +67,9 @@ class ExtruderMesh:
                     float(self.max_y - self.min_y)) * (self.points_y - 1)
 
         ix0 = int(math.floor(lookup_x))
-        ix1 = int(math.ceil(lookup_x))
+        ix1 = int(math.floor(lookup_x + 1))
         iy0 = int(math.floor(lookup_y))
-        iy1 = int(math.ceil(lookup_y))
+        iy1 = int(math.floor(lookup_y + 1))
 
         #x0y0 = self.points[iy0 * self.points_x + ix0]
         #x0y1 = self.points[iy1 * self.points_x + ix0]
