@@ -78,8 +78,8 @@ class ExtruderMesh:
         
         # test points are transposed
         x0y0 = self.points[ix0 * self.points_x + iy0]
-        x0y1 = self.points[ix1 * self.points_x + iy0]
-        x1y0 = self.points[ix0 * self.points_x + iy1]
+        x0y1 = self.points[ix0 * self.points_x + iy1]
+        x1y0 = self.points[ix1 * self.points_x + iy0]
         x1y1 = self.points[ix1 * self.points_x + iy1]
 
         px = math.modf(lookup_x)[0]
