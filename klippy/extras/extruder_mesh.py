@@ -47,6 +47,8 @@ class ExtruderMesh:
             'ENABLE_EXTRUDER_MESH', self.cmd_ENABLE_EXTRUDER_MESH)
         self.gcode.register_command(
             'DISABLE_EXTRUDER_MESH', self.cmd_DISABLE_EXTRUDER_MESH)
+        self.gcode.register_command(
+            'SET_EXTRUDER_MESH_MULTIPLIER', self.cmd_SET_EXTRUDER_MESH_MULTIPLIER)
 
     def handle_ready(self):
         self.next_transform = self.gcode.set_move_transform(self, force=True)
@@ -113,6 +115,9 @@ class ExtruderMesh:
 
     def cmd_DISABLE_EXTRUDER_MESH(self, params):
         self.enabled = False
+
+    def cmd_SET_EXTRUDER_MESH_MULTIPLIER(self, params):
+        self.multiplier = self.gcode.get_float('MULTIPLIER', params, 1.0)
 
 
 def load_config(config):
