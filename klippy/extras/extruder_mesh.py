@@ -82,12 +82,12 @@ class ExtruderMesh:
         iy0 = int(math.floor(lookup_y))
         iy1 = int(math.floor(lookup_y + 1))
 
-        # x0y0 = self.points[iy0 * self.points_x + ix0]
-        # x0y1 = self.points[iy1 * self.points_x + ix0]
-        # x1y0 = self.points[iy0 * self.points_x + ix1]
-        # x1y1 = self.points[iy1 * self.points_x + ix1]
+        #x0y0 = self.points[iy0 * self.points_x + ix0]
+        #x0y1 = self.points[iy0 * self.points_x + ix1]
+        #x1y0 = self.points[iy1 * self.points_x + ix0]
+        #x1y1 = self.points[iy1 * self.points_x + ix1]
 
-        # test points are transposed
+        # For transposed voron with bowden entering from left.
         x0y0 = self.points[ix0 * self.points_x + iy0]
         x0y1 = self.points[ix0 * self.points_x + iy1]
         x1y0 = self.points[ix1 * self.points_x + iy0]
